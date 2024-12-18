@@ -14,6 +14,15 @@ if file_path:
         df = pd.read_excel(file_path)
         st.write("Dataset Preview:")
         st.dataframe(df.head())
+        numeric_columns = df.select_dtypes(include=['float64', 'int64']).columns
+        data = df[numeric_columns]
+        for col in numeric_columns:
+        plt.figure(figsize=(8, 5))
+        sns.histplot(df[col], kde=True, bins=30, color='blue')
+        plt.title(f'Distribution of {col}')
+        plt.xlabel(col)
+        plt.ylabel('Frequency')
+        plt.show()
         cat = df.select_dtypes(include='object')
         for col in cat.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
