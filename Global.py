@@ -6,26 +6,17 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
 from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN
 from sklearn.mixture import GaussianMixture
-
-# Title for the app
 st.title("Clustering Analysis Web App")
-
-# Input the file path manually
 file_path = st.text_input("Enter the file path to your dataset (e.g., C:/path/to/your/file.xlsx)")
-
 if file_path:
     try:
         # Read the uploaded file using the provided file path
         df = pd.read_excel(file_path)
         st.write("Dataset Preview:")
         st.dataframe(df.head())
-
-        # Handle categorical columns
         cat = df.select_dtypes(include='object')
         for col in cat.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
-
-        # Columns to be used for clustering
         columns = ['Birth Rate','CO2 Emissions',
                    'Days to Start Business', 'Ease of Business', 'Energy Usage',
                    'Health Exp % GDP','Hours to do Tax',
@@ -35,7 +26,6 @@ if file_path:
                    'Population 65+', 'Population Total', 'Population Urban',]
         scaler = StandardScaler()
         df_scaled = scaler.fit_transform(df[columns])
-
         # Clustering Method Selection
         clustering_method = st.selectbox("Select a Clustering Method", 
                                          ["KMeans", "Agglomerative Clustering", "DBSCAN", "Gaussian Mixture"])
