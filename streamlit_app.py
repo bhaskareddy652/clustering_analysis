@@ -1,5 +1,5 @@
 import streamlit as st
 
-st.title('Clustering Deployment')
+st.title('Machine Learning')
 
-st.write('See how it works')
+st.write('This app builds a machine learning models! ')
