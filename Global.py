@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
 from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN
 from sklearn.mixture import GaussianMixture
-st.title("Clustering Analysis Web App")
+st.title("deployment")
 st.write("This app is for machine learing algorithms!!!!")
 data_source = st.radio("Choose how to provide the dataset:", 
                        options=["Upload File", "Enter Local File Path"])
