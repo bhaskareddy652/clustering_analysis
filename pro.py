@@ -16,7 +16,7 @@ st.sidebar.header("Input Feature Values")
 
 # Collect user inputs
 user_input = {
-    'Birth Rate': st.sidebar.number_input("Birth Rate:",value=0.01, step=0.001),
+    'Birth Rate': st.sidebar.number_input("Birth Rate:",value=0.0000001, step=0.01),
     'CO2 Emission': st.sidebar.number_input("CO2 Emission:", min_value=0.01, max_value=1000.0, value=200.0, step=0.00000001, format="%.8f"),
     'Days to Start Business': st.sidebar.number_input("Days to Start Business:", min_value=0.01, max_value=100.0, value=20.0, step=0.00000001, format="%.8f"),
     'GDP': st.sidebar.number_input("GDP (in billions):", min_value=0.01, max_value=100000.0, value=500.0, step=0.00000001, format="%.8f"),
