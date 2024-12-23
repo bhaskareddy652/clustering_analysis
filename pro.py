@@ -16,22 +16,23 @@ st.sidebar.header("Input Feature Values")
 
 # Collect user inputs
 user_input = {
-    'Birth Rate': st.sidebar.number_input("Birth Rate:",value=0.0, step=0.1),
-    'CO2 Emission': st.sidebar.number_input("CO2 Emission:", min_value=0.01, max_value=1000.0, value=200.0, step=0.00000001, format="%.8f"),
-    'Days to Start Business': st.sidebar.number_input("Days to Start Business:", min_value=0.01, max_value=100.0, value=20.0, step=0.00000001, format="%.8f"),
-    'GDP': st.sidebar.number_input("GDP (in billions):", min_value=0.01, max_value=100000.0, value=500.0, step=0.00000001, format="%.8f"),
-    'Health Exp % GDP': st.sidebar.number_input("Health Expenditure (% of GDP):", min_value=0.01, max_value=100.0, value=5.0, step=0.00000001, format="%.8f"),
-    'Health Exp/Capita': st.sidebar.number_input("Health Expenditure per Capita:", min_value=0.01, max_value=100000.0, value=1000.0, step=0.00000001, format="%.8f"),
-    'Infant Mortality Rate': st.sidebar.number_input("Infant Mortality Rate:", min_value=0.01, max_value=100.0, value=10.0, step=0.00000001, format="%.8f"),
-    'Internet Usage': st.sidebar.number_input("Internet Usage (%):", min_value=0.01, max_value=100.0, value=70.0, step=0.00000001, format="%.8f"),
-    'Life Expectancy Female': st.sidebar.number_input("Life Expectancy Female:", min_value=0.01, max_value=100.0, value=75.0, step=0.00000001, format="%.8f"),
-    'Life Expectancy Male': st.sidebar.number_input("Life Expectancy Male:", min_value=0.01, max_value=100.0, value=70.0, step=0.00000001, format="%.8f"),
-    'Mobile Phone Usage': st.sidebar.number_input("Mobile Phone Usage (%):", min_value=0.01, max_value=100.0, value=80.0, step=0.00000001, format="%.8f"),
-    'Population Total': st.sidebar.number_input("Population Total (in millions):", min_value=0.01, max_value=2000.0, value=100.0, step=0.00000001, format="%.8f"),
-    'Population 0-14': st.sidebar.number_input("Population 0-14 (%):", min_value=0.01, max_value=100.0, value=25.0, step=0.00000001, format="%.8f"),
-    'Population 15-64': st.sidebar.number_input("Population 15-64 (%):", min_value=0.01, max_value=100.0, value=60.0, step=0.00000001, format="%.8f"),
-    'Population 65+': st.sidebar.number_input("Population 65+ (%):", min_value=0.01, max_value=100.0, value=15.0, step=0.00000001, format="%.8f"),
-    'Population Urban': st.sidebar.number_input("Urban Population (%):", min_value=0.01, max_value=100.0, value=70.0, step=0.00000001, format="%.8f")
+    'Birth Rate': st.sidebar.number_input("Enter Birth Rate:", value=0.0, step=0.1),
+    'CO2 Emission': st.sidebar.number_input("Enter CO2 Emission:", value=0.0, step=0.1),
+    'Days to Start Business': st.sidebar.number_input("Enter Days to Start Business:", value=0.0, step=1.0),
+    'GDP': st.sidebar.number_input("Enter GDP:", value=0.0, step=1.0),
+    'Health Exp % GDP': st.sidebar.number_input("Enter Health Exp % GDP:", value=0.0, step=0.1),
+    'Health Exp/Capita': st.sidebar.number_input("Enter Health Exp/Capita:", value=0.0, step=1.0),
+    'Infant Mortality Rate': st.sidebar.number_input("Enter Infant Mortality Rate:", value=0.0, step=0.1),
+    'Internet Usage': st.sidebar.number_input("Enter Internet Usage:", value=0.0, step=0.1),
+    'Life Expectancy Female': st.sidebar.number_input("Enter Life Expectancy Female:", value=0.0, step=0.1),
+    'Life Expectancy Male': st.sidebar.number_input("Enter Life Expectancy Male:", value=0.0, step=0.1),
+    'Mobile Phone Usage': st.sidebar.number_input("Enter Mobile Phone Usage:", value=0.0, step=1.0),
+    'Population Total': st.sidebar.number_input("Enter Population Total:", value=0.0, step=1.0),
+    'Number of Records': st.sidebar.number_input("Enter Number of Records:", value=0.0, step=1.0),
+    'Population 0-14': st.sidebar.number_input("Enter Population 0-14:", value=0.0, step=0.1),
+    'Population 15-64': st.sidebar.number_input("Enter Population 15-64:", value=0.0, step=0.1),
+    'Population 65+': st.sidebar.number_input("Enter Population 65+:", value=0.0, step=0.1),
+    'Population Urban': st.sidebar.number_input("Enter Population Urban:", value=0.0, step=0.1),
 }
 
 # Convert user input into a DataFrame
