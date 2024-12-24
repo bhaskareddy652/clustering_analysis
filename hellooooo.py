@@ -81,4 +81,4 @@ if uploaded_file is not None:
         st.write(f"MLP Prediction: {'Opened' if mlp_pred[0] == 1 else 'Not Opened'} (Probability: {mlp_pred_prob[0]:.2f})")
 else:
     st.warning("Please upload a dataset to proceed.")
-st.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\t\t\tThis we app created by Madhu Hasitha")
+st.write("                                                                                                                    This we app created by Madhu Hasitha")
