@@ -81,4 +81,27 @@ if uploaded_file is not None:
         st.write(f"MLP Prediction: {'Opened' if mlp_pred[0] == 1 else 'Not Opened'} (Probability: {mlp_pred_prob[0]:.2f})")
 else:
     st.warning("Please upload a dataset to proceed.")
-st.write("                                                                                                                    This we app created by Madhu Hasitha")
+st.markdown(
+    """
+    <style>
+    footer {
+        visibility: hidden;
+    }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        color: #000;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+    </style>
+    <div class="footer">
+        <p>Web app created by <b>Madhu Hasitha</b></p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
