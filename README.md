@@ -43,4 +43,9 @@ Lending Rate: Interest rate charged by banks on loans.
 
 Life Expectancy (Female): Average life expectancy for females in years.
 
+## Conclusion
+
+Analyzed global development measurement data to create meaningful clusters of countries based on 
+economic and development metrics, providing insights into social-economic similarities and 
+disparities.
 
