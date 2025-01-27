@@ -3,7 +3,7 @@ This app for deploying the Global Development Using Clustering
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://cluster-deploy.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://cluster-deploy2.streamlit.app/)
 
 ## GitHub Codespaces
 
