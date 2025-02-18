@@ -4,18 +4,13 @@ import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
-
-# Title and description with professional layout
 st.title("Global Clustering: Social & Economic Factors")
 st.markdown("""
 This app uses **K-Means clustering** to categorize countries based on key economic and social metrics. 
 Provide data on your country, and discover which cluster your country falls into. 
 """)
 st.markdown("---")  # Horizontal line for separation
-
-# Sidebar header with a professional tone
 st.sidebar.header("Input: Country's Social & Economic Features")
-
 # Collect user inputs with tooltips for clarity
 user_input = {
     'Birth Rate': st.sidebar.number_input("Birth Rate:", min_value=0.0, max_value=100.0, value=0.01, step=0.1, help="Rate of births per 1,000 people."),
@@ -35,35 +30,23 @@ user_input = {
     'Population 65+': st.sidebar.number_input("Population 65+ (%):", min_value=0.0, max_value=100.0, value=15.0, step=0.1, help="Percentage of population aged 65 and above."),
     'Population Urban': st.sidebar.number_input("Urban Population (%):", min_value=0.0, max_value=100.0, value=70.0, step=0.1, help="Percentage of population living in urban areas.")
 }
-
 # Convert user input into a DataFrame
 user_data = pd.DataFrame([user_input])
-
-# Mock dataset (replace with real dataset later)
 mock_data = pd.DataFrame(
     np.random.rand(100, len(user_input)) * 100,
     columns=user_input.keys()
 )
-
 # Combine user data with mock data
 combined_data = pd.concat([mock_data, user_data], ignore_index=True)
-
-# Scale the data
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(combined_data)
-
 # Apply KMeans clustering
 n_clusters = 3  # Adjust the number of clusters as needed
 kmeans = KMeans(n_clusters=n_clusters, random_state=42)
 kmeans.fit(scaled_data)
-
 # Get cluster label for user input
 user_cluster = kmeans.predict(scaled_data[-1].reshape(1, -1))[0]
-
-# Display the result
 st.success(f"Your country belongs to Cluster **{user_cluster}**!")
-
-# Visualize user input
 st.write("### Your Feature Values")
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.bar(user_input.keys(), user_data.iloc[0].values, color='skyblue')
@@ -72,7 +55,6 @@ ax.set_ylabel("Value", fontsize=12)
 ax.set_xlabel("Features", fontsize=12)
 plt.xticks(rotation=45, ha="right")
 st.pyplot(fig)
-
 # Cluster visualization
 labels = kmeans.labels_
 # Cluster descriptions with brief, clear explanation
@@ -82,8 +64,6 @@ st.write("""
 - **Cluster 1**: High-Income Economies - Extremely high GDP, advanced technology, and strong healthcare systems.
 - **Cluster 2**: Low-Income Economies - Lower GDP, limited access to healthcare, and shorter life expectancy.
 """)
-
-# Optional: Provide footer with project details
 st.markdown("---")
-st.markdown("### Developed by [Your Name]")
-st.markdown("GitHub: [Your GitHub Profile URL] | LinkedIn: [Your LinkedIn Profile URL]")
+st.markdown("### Developed by [Bhaskar Reddy]")
+st.markdown("GitHub: [] | LinkedIn: [https://www.linkedin.com/in/bhaskarreddy12/]")
