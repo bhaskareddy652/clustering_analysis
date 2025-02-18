@@ -48,10 +48,15 @@ The dataset contains information on several economic and development metrics for
 We applied multiple clustering algorithms to the dataset and evaluated each based on various performance metrics. The algorithms used were:
 
 K-Means Clustering
+
 Hierarchical Clustering
+
 DBSCAN
+
 Agglomerative Clustering
+
 Evaluation and Selection:
+
 After testing and evaluating the performance of each algorithm, we selected K-Means as the best clustering model due to its higher Silhouette Score and more meaningful cluster interpretations. The K-Means algorithm provides a clear and distinct categorization of countries based on their socio-economic factors.
 
 ## Conclusion
