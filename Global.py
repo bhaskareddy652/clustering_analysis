@@ -65,5 +65,5 @@ st.write("""
 - **Cluster 2**: Low-Income Economies - Lower GDP, limited access to healthcare, and shorter life expectancy.
 """)
 st.markdown("---")
-st.markdown("### Developed by [Bhaskar Reddy]")
-st.markdown("GitHub: [] | LinkedIn: [https://www.linkedin.com/in/bhaskarreddy12/]")
+st.markdown("### Developed by Bhaskar Reddy")
+st.markdown("GitHub: [] | LinkedIn:https://www.linkedin.com/in/bhaskarreddy12/")
