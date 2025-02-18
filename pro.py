@@ -4,17 +4,11 @@ import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
-
-# Title and description
 st.title("Global Clustering: Social & Economic Factors")
 st.write(
     "Discover which group your country belongs to by providing key economic and social metrics. The app uses K-Means clustering for classification"
 )
-
-# Sidebar input for features
 st.sidebar.header("Input Feature Values")
-
-# Collect user inputs
 user_input = {
     'Birth Rate': st.sidebar.number_input("Birth Rate:", min_value=0.0, max_value=100.00, value=10.0000, step=0.01),
     'CO2 Emission': st.sidebar.number_input("CO2 Emission:", min_value=0.0, max_value=1000000.0, value=200.0, step=0.001),
@@ -33,35 +27,19 @@ user_input = {
     'Population 65+': st.sidebar.number_input("Population 65+ (%):", min_value=0.0, max_value=100.0, value=15.0, step=0.1),
     'Population Urban': st.sidebar.number_input("Urban Population (%):", min_value=0.0, max_value=100.0, value=70.0, step=0.1)
 }
-
-# Convert user input into a DataFrame
 user_data = pd.DataFrame([user_input])
-
-# Mock dataset (replace with real dataset later)
 mock_data = pd.DataFrame(
     np.random.rand(100, len(user_input)) * 100,
     columns=user_input.keys()
 )
-
-# Combine user data with mock data
 combined_data = pd.concat([mock_data, user_data], ignore_index=True)
-
-# Scale the data
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(combined_data)
-
-# Apply KMeans clustering
 n_clusters = 3  # Adjust the number of clusters as needed
 kmeans = KMeans(n_clusters=n_clusters, random_state=42)
 kmeans.fit(scaled_data)
-
-# Get cluster label for user input
 user_cluster = kmeans.predict(scaled_data[-1].reshape(1, -1))[0]
-
-# Display the result
 st.success(f"Your country belongs to Cluster {user_cluster}!")
-
-# Visualize user input
 st.write("### Your Feature Values")
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.bar(user_input.keys(), user_data.iloc[0].values, color='skyblue')
@@ -70,10 +48,7 @@ ax.set_ylabel("Value")
 ax.set_xlabel("Features")
 plt.xticks(rotation=45, ha="right")
 st.pyplot(fig)
-
-# Cluster visualization
 labels = kmeans.labels_
-# Cluster descriptions
 st.write("### Cluster Descriptions:")
 st.write("""
 - **Cluster 0**: Developed Economies - High GDP, excellent healthcare, and high life expectancy.
